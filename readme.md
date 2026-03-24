@@ -47,7 +47,7 @@ In your `app/build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.MrLincon:GlassyBottomBar:v1.0.4")
+    implementation("com.github.MrLincon:GlassyBottomBar:v0.0.3")
 }
 ```
 

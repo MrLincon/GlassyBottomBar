@@ -204,8 +204,10 @@ The library handles this automatically. You don't need to check API levels yours
 
 ### 1. Default - works in all themes automatically
 
-![Demo 1 - Light](screenshots/demo_1_light.png)
-![Demo 1 - Dark](screenshots/demo_1_dark.png)
+<p float="left">
+  <img src="screenshots/demo_1_light.png" width="48%" />
+  <img src="screenshots/demo_1_light.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(
@@ -220,8 +222,10 @@ GlassyBottomBarScaffold(
 
 ### 2. Light mode - white frosted glass
 
-![Demo 2 - Light](screenshots/demo_2_light.png)
-![Demo 2 - Dark](screenshots/demo_2_dark.png)
+<p float="left">
+  <img src="screenshots/demo_2_light.png" width="48%" />
+  <img src="screenshots/demo_2_dark.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(
@@ -245,8 +249,10 @@ GlassyBottomBarScaffold(
 
 ### 3. Dark mode - dark frosted glass
 
-![Demo 3 - Light](screenshots/demo_3_light.png)
-![Demo 3 - Dark](screenshots/demo_3_dark.png)
+<p float="left">
+  <img src="screenshots/demo_3_light.png" width="48%" />
+  <img src="screenshots/demo_3_dark.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(
@@ -270,8 +276,10 @@ GlassyBottomBarScaffold(
 
 ### 4. Colored glass - purple tint
 
-![Demo 4 - Light](screenshots/demo_4_light.png)
-![Demo 4 - Dark](screenshots/demo_4_dark.png)
+<p float="left">
+  <img src="screenshots/demo_4_light.png" width="48%" />
+  <img src="screenshots/demo_4_dark.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(
@@ -294,7 +302,9 @@ GlassyBottomBarScaffold(
 
 ### 5. No blur - solid pill style
 
-![Demo 5 - Light](screenshots/demo_5_light.png)
+<p float="left">
+  <img src="screenshots/demo_5_light.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(
@@ -320,7 +330,9 @@ GlassyBottomBarScaffold(
 
 The safest option - follows your app's theme in any mode automatically.
 
-![Demo 6 - Dark](screenshots/demo_6_dark.png)
+<p float="left">
+  <img src="screenshots/demo_6_dark.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(
@@ -343,7 +355,9 @@ GlassyBottomBarScaffold(
 
 ### 7. Minimal - icon-only feel
 
-![Demo 7 - Dark](screenshots/demo_7_dark.png)
+<p float="left">
+  <img src="screenshots/demo_7_dark.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(
@@ -366,7 +380,9 @@ GlassyBottomBarScaffold(
 
 ### 8. Fully squared - no rounded corners
 
-![Demo 8 - Dark](screenshots/demo_8_dark.png)
+<p float="left">
+  <img src="screenshots/demo_8_dark.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(
@@ -388,7 +404,9 @@ GlassyBottomBarScaffold(
 
 When `bgOpacity` is `1.0`, the bar is fully opaque and the glassy border no longer makes sense. Use `disableBorder = true` to hide it cleanly.
 
-![Demo 9 - Dark](screenshots/demo_9_dark.png)
+<p float="left">
+  <img src="screenshots/demo_9_dark.png" width="48%" />
+</p>
 
 ```kotlin
 GlassyBottomBarScaffold(

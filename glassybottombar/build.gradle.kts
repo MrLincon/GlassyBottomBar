@@ -58,7 +58,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.MrLincon"
                 artifactId = "glassybottombar"
-                version = "v1.0.0"
+                version = "v0.0.3"
             }
         }
     }

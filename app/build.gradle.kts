@@ -51,9 +51,9 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.coil.compose)
 
-//    implementation("com.github.MrLincon:GlassyBottomBar:0.0.2")
+    implementation(libs.glassybottombar)
 
-    implementation(project(":glassybottombar"))
+//    implementation(project(":glassybottombar"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

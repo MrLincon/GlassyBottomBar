@@ -52,10 +52,12 @@ internal fun Modifier.backdropBlurSource(state: BackdropBlurState): Modifier {
 
 internal fun Modifier.backdropBlurChild(
     state: BackdropBlurState,
-    blurRadius: Float = 20f,
+    blurRadius: Float = 0.5f,
     noiseFactor: Float = 0f,
     tintColor: Color = Color.Transparent
 ): Modifier {
+    val actualBlurRadius = blurRadius.coerceIn(0f, 1f) * 50f
+
     return this
         .onGloballyPositioned {
             state.childPositionInRoot = it.positionInRoot()
@@ -75,9 +77,7 @@ internal fun Modifier.backdropBlurChild(
                         isAntiAlias = true
                         setShader(shader)
                         alpha = (noiseFactor.coerceIn(0f, 1f) * 255).toInt()
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                            blendMode = android.graphics.BlendMode.OVERLAY
-                        }
+                        blendMode = android.graphics.BlendMode.OVERLAY
                     }
                 }
             } else null
@@ -98,7 +98,7 @@ internal fun Modifier.backdropBlurChild(
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                         childLayer.renderEffect = android.graphics.RenderEffect
                             .createBlurEffect(
-                                blurRadius, blurRadius,
+                                actualBlurRadius, actualBlurRadius,
                                 android.graphics.Shader.TileMode.CLAMP
                             )
                             .asComposeRenderEffect()

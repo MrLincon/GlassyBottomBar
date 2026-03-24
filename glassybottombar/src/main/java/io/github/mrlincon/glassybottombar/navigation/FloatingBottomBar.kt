@@ -12,13 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import io.github.mrlincon.glassybottombar.components.BackdropBlurState
 import io.github.mrlincon.glassybottombar.components.backdropBlurChild
-
-private val GlassShape = RoundedCornerShape(60.dp)
 
 @Composable
 internal fun FloatingBottomBar(
@@ -26,41 +26,58 @@ internal fun FloatingBottomBar(
     blurState: BackdropBlurState,
     items: List<FloatingNavItem>,
     isBlurSupported: Boolean,
+    isBorderDisabled: Boolean,
+    blurRadius: Float,
+    noiseFactor: Float,
+    bgTintColor: Color,
+    bgCornerRadius: Dp,
+    selectedCardColor: @Composable () -> Color,
+    unselectedCardColor: @Composable () -> Color,
+    cardOpacity: Float,
+    cardCornerRadius: Dp,
+    selectedIconColor: @Composable () -> Color,
+    unselectedIconColor: @Composable () -> Color,
+    barHeight: Dp,
     modifier: Modifier = Modifier
 ) {
+    val glassShape = RoundedCornerShape(bgCornerRadius)
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
+
+    // Theme-aware border — light in dark mode, dark in light mode
+    val isLight = MaterialTheme.colorScheme.background.luminance() > 0.5f
+    val borderHighlight = if (isLight) Color.Black.copy(alpha = 0.25f) else Color.White.copy(alpha = 0.5f)
+    val borderShadow = if (isLight) Color.Black.copy(alpha = 0.05f) else Color.White.copy(alpha = 0.1f)
 
     val backgroundModifier = if (isBlurSupported) {
         Modifier.backdropBlurChild(
             state = blurState,
-            blurRadius = 25f,
-            noiseFactor = 0.2f,
-            tintColor = Color.White.copy(alpha = 0.01f)
+            blurRadius = blurRadius,
+            noiseFactor = noiseFactor,
+            tintColor = bgTintColor
         )
     } else {
-        // Fallback — solid frosted surface for API 30
         Modifier.background(
-            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f),
-            shape = GlassShape
+            color = bgTintColor.copy(alpha = 0.85f),
+            shape = glassShape
         )
     }
 
     Box(
         modifier = modifier
             .wrapContentWidth()
-            .height(66.dp)
-            .clip(GlassShape)
+            .height(barHeight)
+            .clip(glassShape)
             .then(backgroundModifier)
-            .border(
-                width = 1.dp,
-                brush = Brush.verticalGradient(
-                    colors = listOf(
-                        Color.White.copy(alpha = 0.5f),
-                        Color.White.copy(alpha = 0.1f)
-                    )
-                ),
-                shape = GlassShape
+            .then(
+                if (isBorderDisabled) Modifier
+                else Modifier.border(
+                    width = 1.dp,
+                    brush = Brush.verticalGradient(
+                        colors = listOf(borderHighlight, borderShadow)
+                    ),
+                    shape = glassShape
+                )
             )
     ) {
         Row(
@@ -73,6 +90,11 @@ internal fun FloatingBottomBar(
                     selected = currentRoute == item.route,
                     label = item.label,
                     iconRes = item.iconRes,
+                    selectedCardColor = selectedCardColor(),
+                    unselectedCardColor = unselectedCardColor().copy(alpha = cardOpacity),
+                    selectedIconColor = selectedIconColor(),
+                    unselectedIconColor = unselectedIconColor(),
+                    cardCornerRadius = cardCornerRadius,
                     onClick = {
                         navController.navigate(item.route) {
                             popUpTo(items.first().route) { saveState = true }

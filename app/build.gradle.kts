@@ -51,9 +51,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.coil.compose)
 
-    implementation(libs.glassybottombar)
-
-//    implementation(project(":glassybottombar"))
+    implementation(project(":glassybottombar"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

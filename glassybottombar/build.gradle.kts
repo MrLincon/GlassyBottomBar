@@ -57,8 +57,10 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components["release"])
                 groupId = "com.github.MrLincon"
-                artifactId = "glassybottombar"
-                version = "v0.0.3"
+                artifactId = "GlassyBottomBar"
+                version = providers.gradleProperty("version")
+                    .orElse(System.getenv("VERSION") ?: "0.0.0-SNAPSHOT")
+                    .get()
             }
         }
     }

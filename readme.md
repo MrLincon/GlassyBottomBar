@@ -214,7 +214,7 @@ GlassyBottomBarScaffold(
 
 <p float="left">
   <img src="screenshots/demo_2_light_1.png" width="48%" />
-  <img src="screenshots/demo_2_light_2.png.png" width="48%" />
+  <img src="screenshots/demo_2_light_2.png" width="48%" />
 </p>
 
 ```kotlin
@@ -240,7 +240,7 @@ GlassyBottomBarScaffold(
 ### 3. Dark mode - dark frosted glass
 
 <p float="left">
-  <img src="screenshots/demo_3_dark_1.png.png" width="48%" />
+  <img src="screenshots/demo_3_dark_1.png" width="48%" />
   <img src="screenshots/demo_3_dark_2.png" width="48%" />
 </p>
 

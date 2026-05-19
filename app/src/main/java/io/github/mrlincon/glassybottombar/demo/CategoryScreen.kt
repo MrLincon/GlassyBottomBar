@@ -1,6 +1,5 @@
 package io.github.mrlincon.glassybottombar.demo
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,8 +15,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -31,9 +28,9 @@ private data class Category(
 )
 
 private val categories = listOf(
-    Category("AI", 4, R.drawable.wall_1),
-    Category("Car", 2, R.drawable.wall_4),
-    Category("Game", 2, R.drawable.wall_7),
+    Category("AI", 4, R.drawable.wall_7),
+    Category("Car", 2, R.drawable.wall_8),
+    Category("Game", 2, R.drawable.wall_5),
     Category("Anime", 1, R.drawable.wall_9),
 )
 

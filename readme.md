@@ -4,16 +4,6 @@ A glassmorphism floating bottom navigation bar for Jetpack Compose. Features rea
 
 ---
 
-## Preview
-
-| Light Mode | Dark Mode | Colored Glass |
-|---|---|---|
-| White frosted glass bar | Dark frosted glass bar | Custom tint color |
-
-> **Tip:** Record a GIF of your demo app and drop it here for maximum impact.
-
----
-
 ## Features
 
 - **Real backdrop blur** - uses Android's `RenderEffect` API for genuine glass blur on API 31+
@@ -47,7 +37,7 @@ In your `app/build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.MrLincon:GlassyBottomBar:v0.0.3")
+    implementation("com.github.MrLincon:GlassyBottomBar:1.0.0")
 }
 ```
 
@@ -205,7 +195,7 @@ The library handles this automatically. You don't need to check API levels yours
 ### 1. Default - works in all themes automatically
 
 <p float="left">
-  <img src="screenshots/demo_1_light.png" width="48%" />
+  <img src="screenshots/demo_1_dark.png" width="48%" />
   <img src="screenshots/demo_1_light.png" width="48%" />
 </p>
 
@@ -223,8 +213,8 @@ GlassyBottomBarScaffold(
 ### 2. Light mode - white frosted glass
 
 <p float="left">
-  <img src="screenshots/demo_2_light.png" width="48%" />
-  <img src="screenshots/demo_2_dark.png" width="48%" />
+  <img src="screenshots/demo_2_light_1.png" width="48%" />
+  <img src="screenshots/demo_2_light_2.png.png" width="48%" />
 </p>
 
 ```kotlin
@@ -250,8 +240,8 @@ GlassyBottomBarScaffold(
 ### 3. Dark mode - dark frosted glass
 
 <p float="left">
-  <img src="screenshots/demo_3_light.png" width="48%" />
-  <img src="screenshots/demo_3_dark.png" width="48%" />
+  <img src="screenshots/demo_3_dark_1.png.png" width="48%" />
+  <img src="screenshots/demo_3_dark_2.png" width="48%" />
 </p>
 
 ```kotlin
@@ -277,8 +267,8 @@ GlassyBottomBarScaffold(
 ### 4. Colored glass - purple tint
 
 <p float="left">
-  <img src="screenshots/demo_4_light.png" width="48%" />
   <img src="screenshots/demo_4_dark.png" width="48%" />
+  <img src="screenshots/demo_4_light.png" width="48%" />
 </p>
 
 ```kotlin
@@ -300,7 +290,7 @@ GlassyBottomBarScaffold(
 
 ---
 
-### 5. No blur - solid pill style
+### 5. Light mode - No blur
 
 <p float="left">
   <img src="screenshots/demo_5_light.png" width="48%" />

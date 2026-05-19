@@ -31,15 +31,15 @@ class MainActivity : ComponentActivity() {
                 GlassyBottomBarScaffold(
                     navController = navController,
                     items = items,
-                    disableBorder = true,
-                    bgTintColor = { Color(0xFF262626) },
-                    bgOpacity = 1f,
-                    bgCornerRadius = 100.dp,
-                    selectedCardColor = { Color.White },
-                    unselectedCardColor = { Color.White },
-                    cardOpacity = 0.12f,
-                    selectedIconColor = { Color.Black },
-                    unselectedIconColor = { Color.White.copy(alpha = 0.6f) }
+                    bgTintColor = { Color.Black },
+                    bgOpacity = 0.3f,
+                    blurRadius = 0.7f,
+                    noiseFactor = 0.2f,
+                    selectedCardColor = { Color.Blue },
+                    unselectedCardColor = { Color.DarkGray },
+                    cardOpacity = 0.5f,
+                    selectedIconColor = { Color.White },
+                    unselectedIconColor = { Color.White }
                 ){ paddingValues ->
                     NavHost(
                         navController = navController,

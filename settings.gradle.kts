@@ -24,5 +24,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "GlassyBottomBar"
-include(":app")
+include(":example")
 include(":glassybottombar")

@@ -53,7 +53,8 @@ dependencies {
 
     implementation(libs.glassybottombar)
 
-//    implementation(project(":glassybottombar"))
+    // Optional for local library development:
+    // implementation(project(":glassybottombar"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

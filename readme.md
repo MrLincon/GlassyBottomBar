@@ -2,13 +2,21 @@
 
 A glassmorphism floating bottom navigation bar for Jetpack Compose. Features real backdrop blur, smooth animated pill items, full theme awareness, and a dead-simple API.
 
+## Live App Example
+
+<p align="center">
+  <img src="screenshots/demo_live_app.png" width="320" alt="Live app using GlassyBottomBar" />
+</p>
+
+GlassyBottomBar is used in [Sleep Cycle & Alarm Manager](https://play.google.com/store/apps/details?id=com.whitespace.sleepcycle&hl=en), available on Google Play.
+
 ---
 
 ## Features
 
 - **Real backdrop blur** - uses Android's `RenderEffect` API for genuine glass blur on API 31+
-- **Graceful fallback** - solid frosted surface on API 30, no crashes, no broken UI
-- **Animated pill items** - smooth expand/collapse with label on selection
+- **Graceful fallback** - uses a solid frosted surface on API 30, with no crashes or broken UI
+- **Animated pill items** - smooth expand/collapse animation with the label shown on selection
 - **Fully customizable** - colors, opacity, blur, corner radius, bar height, and more
 - **Theme aware** - adapts automatically to light, dark, and system themes
 - **Minimal API** - one composable, drop it in and you're done
@@ -183,14 +191,16 @@ data class FloatingNavItem(
 
 | Android Version | API Level | Blur Support |
 |---|---|---|
-| Android 11 | 30 | ❌ Solid tint fallback |
-| Android 12+ | 31+ | ✅ Full backdrop blur |
+| Android 11 | 30 | No - solid tint fallback |
+| Android 12+ | 31+ | Yes - full backdrop blur |
 
 The library handles this automatically. You don't need to check API levels yourself.
 
 ---
 
 ## Examples
+
+The `example` folder contains a runnable demo app showing how to implement GlassyBottomBar in a real Compose project.
 
 ### 1. Default - works in all themes automatically
 
@@ -290,7 +300,7 @@ GlassyBottomBarScaffold(
 
 ---
 
-### 5. Light mode - No blur
+### 5. Light mode - no blur
 
 <p float="left">
   <img src="screenshots/demo_5_light.png" width="48%" />
@@ -428,7 +438,7 @@ GlassyBottomBarScaffold(
     items = items
 ) { paddingValues ->
     LazyColumn(
-        contentPadding = paddingValues // ← apply here
+        contentPadding = paddingValues // apply here
     ) {
         // your content
     }
@@ -507,6 +517,6 @@ SOFTWARE.
 
 ## Author
 
-Made with ❤️ by [Ahamed Lincon](https://github.com/MrLincon)
+Made with love by [Ahamed Lincon](https://github.com/MrLincon)
 
-If this library helped you, consider leaving a ⭐ on GitHub - it means a lot.
+If this library helped you, consider leaving a star on GitHub - it means a lot.
